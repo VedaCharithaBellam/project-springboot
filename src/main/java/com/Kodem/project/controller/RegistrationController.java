@@ -15,7 +15,7 @@ public class RegistrationController {
     @CrossOrigin(origins = "http://localhost:4200")
     public User registerUser(@RequestBody User user) throws Exception{
 
-        System.out.println("hey");
+
         String tempEmail= user.getEmail();
 
                 if(tempEmail!= null && "".equals(tempEmail)){

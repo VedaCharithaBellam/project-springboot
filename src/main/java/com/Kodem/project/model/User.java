@@ -1,6 +1,7 @@
 package com.Kodem.project.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -8,12 +9,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(unique=true)
     private String email;
     private String username;
     private String password;
 
-    @ManyToOne
-    private Certification certification;
+    @OneToMany(mappedBy = "user")
+    private List<Certification> certifications;
 
     public User(){
 
